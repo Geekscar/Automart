@@ -4,14 +4,18 @@ from django.shortcuts import render
 # Create your views here.
 
 def index(request):
-    #return render(request, 'index.html')
-    #return HttpResponse("<h1>Bienvenido a Automart</h1>")
+    return render(request, 'index.html', {'autos' : autos})
 
-    nombre = "VW Jetta"
-    modelo = 2018
-    precio = 145000
-    color = "Rojo"
+class Auto:
+    def __init__(self, nombre, modelo, precio, color):
+        self.nombre = nombre
+        self.modelo = modelo
+        self.precio = precio
+        self.color = color
 
-    context = {'auto_nombre' : nombre, 'auto_modelo' : modelo, 'auto_precio' : precio, 'auto_color' : color}
-
-    return render(request, 'index.html', context)
+autos = [
+    Auto("VW Jetta", 2018, 145000, "Rojo"),
+    Auto("Futura", 1955, 0, "Aqua"),
+    Auto("Seat", 2002, 110000, "Azul"),
+    Auto("Ford ", 1999, 34000, "Negro")
+]
