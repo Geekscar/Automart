@@ -1,3 +1,10 @@
 h1 {
     color: #0b857f;
 }
+body {
+    background-color: #3c3737;
+}
+.foto {
+    max-width: 100%;
+    height: 200px;
+}
